@@ -1,0 +1,6 @@
+
+$basefontsize:30;
+
+@function px2rem($px){
+	@return $px/$basefontsize*1rem;
+}

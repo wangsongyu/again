@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<input type="text" name="" id="text"><br>
+	<div>
+		<input type="checkbox" name="" value="js">js<br>
+		<input type="checkbox" name="" value="css">css<br>
+		<input type="checkbox" name="" value="html">html<br>
+		<input type="checkbox" name="" value="jq">jq<br>
+	</div>
+	<script type="text/javascript">
+		
+		var text = document.querySelector('#text');
+		var div = document.querySelector('div');
+		var inputs = div.querySelectorAll('input');
+		var arr = [];
+		
+
+		for(var i=0; i<inputs.length;i++){
+			inputs[i].index = i;
+			inputs[i].onclick = function(){
+
+				if(this.checked){
+					arr.push(this.value);
+					text.value = arr.join();
+					
+				}else{
+					
+					arr.splice(this.index,1);
+					text.value = arr.join();
+					
+				}
+			}
+
+		}
+
+
+
+		
+	</script>
+</body>
+</html>

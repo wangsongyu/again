@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+
+	//冒泡排序 : 排序操作的一种方案
+	
+	var arr = [10,6,3,7,20];
+
+	function foo(arr){
+		for(var i=0;i<arr.length;i++){    //每一轮
+			for(var j=0;j<arr.length-i;j++){   //每一轮中两个数比较
+				toCom( j , j + 1 ); 
+			}
+		}	
+
+		function toCom(n1,n2){
+			var tmp;
+			if(arr[n1] < arr[n2]){
+				tmp = arr[n1];
+				arr[n1] = arr[n2];
+				arr[n2] = tmp;
+			}
+		}
+
+		return arr;
+
+	}	
+
+	console.log( foo(arr) );  //
+
+
+	</script>
+</body>
+</html>

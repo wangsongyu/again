@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+		#list{
+			margin: 100px;
+			/*position: relative;*/
+			list-style: none;
+		}
+		li{
+			height: 50px;
+			width: 100px;
+			margin-right: 2px;
+			margin-bottom: 2px;
+			background: #990099;
+			display: inline-block;
+			/*position: absolute;*/
+		}
+		span{
+			
+			width: 100px;
+			height: 30px;
+			background: #00ff00;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div id="box" style="height:100px;"></div>
+	
+	<ul id="list">
+		
+	</ul>
+
+
+	<script type="text/javascript">
+		
+		/*var box = document.getElementById('box');
+		console.log(box);
+		var s1 = document.getElementsByClassName('s1');
+		console.log(s1[0]);
+
+		box.style.height = 200 + 'px';
+		box.style.background = 'red';*/
+
+		// var lis = document.getElementsByTagName('li');
+
+		// var inputs = document.getElementsByTagName('input');
+		// 	for(var i=0; i<inputs.length;i++){
+		// 		inputs[i].checked = 'checked';
+		// 	}
+
+		// for(var row=1; row<=9; row++) {
+		// 	for(var col=1; col<=row; col++) {
+		// 		document.write('<span>' + col + 'X' + row + '=' + row*col + '</span>');
+		// 	}
+
+		// 	document.write('<br>');
+		// }
+
+		// var box = document.getElementById('box');
+
+		// if(box.currentStyle){
+		// 	console.log(box.currentStyle.height)
+		// }
+		// else{
+		// 	console.log(getComputedStyle(box).height)
+		// }
+		// var list = document.querySelector('ul');
+		// for(var i = 0; i < 10; i++){
+		// 	list.innerHTML += '<li>'+i+'</li>' ;
+		// }
+		// var lis = list.getElementsByTagName('li');
+		// for(var j=0; j<lis.length;j++){
+		// 	lis[j].style.border = j+1 + 'px'+' '+'solid'+' '+'red';
+		// }
+
+	var list = document.getElementById('list');
+	/*		var col = 10;
+		var row = 5;
+
+		for(var i=0; i<5;i++){
+			//console.log(i);
+
+			 for(var j=0; j<col; j++){
+
+			 	list.innerHTML += '<li style="top:'+(i*55)+'px;left:'+(j*55)+'px;"></li>'
+				//console.log(i);
+			 }
+
+		}*/
+		for(var i=1; i<=9; i++){
+			for(var j=1; j<=i;j++){
+
+				list.innerHTML += '<li>'+j+'*'+i+'='+j*i+'</li>';
+
+			}
+				list.innerHTML += '<br>';
+		}
+
+
+	</script>
+</body>
+</html>

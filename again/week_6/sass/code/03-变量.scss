@@ -1,0 +1,15 @@
+$width:20px;
+
+#box{
+	$width:30px;
+	width:$width;
+
+	p{
+		width: $width+20;
+	}
+} 
+
+
+#box2{
+	width:$width;
+}

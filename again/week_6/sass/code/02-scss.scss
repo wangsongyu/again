@@ -1,0 +1,17 @@
+body{
+	font-size:20px;
+	background:red;
+
+	ul{
+		li{
+			list-style: none;
+			img{
+				float: left;
+			}
+
+			&:hover{
+				background:yellow;
+			}
+		}
+	}
+}

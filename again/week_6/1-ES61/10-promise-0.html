@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div id="example"></div>
+		
+	</body>
+	<script>
+
+
+		/*
+		  1.异步流程,
+
+		    （1）回调地狱-嵌套金字塔
+		     (2) 当所有的异步都结束之后，再做处理
+		*/
+
+		 //q.js (promise) => ES6 (promise) 
+
+		/*
+			promise：将异步流程转换同步实现，
+
+		    三种状态，
+		      (1) pending状态
+		      (2) resolve状态
+		      (3) reject 状态
+
+			pending ->reslove 或者 pending->reject 
+		 */
+	
+	//1. 痛点1 ，嵌套 ，异步流程处理复杂
+		$.ajax({
+			url:"1.php",
+			success:function(result1){
+				$.ajax({
+					ulr:"2.php",
+					data:{name:result1},
+					success:function(result2){
+
+						$.ajax({
+							url:"3.php",
+							data:{name:result2},
+							success:function(result3){
+								$.ajax({
+									url:"4.php",
+									data:{name:result},
+									success:function(result){
+										renderHTML(result);
+									},
+									fail:function(){
+
+									}
+								})
+							},
+							fail:function(){
+
+							}
+						})
+					},
+					fail:function(){
+
+					}
+				})
+
+			},
+			fail:function(){
+
+			}
+		})
+
+
+		function renderHTML(){
+
+		}
+
+		//2. 痛点2
+
+		showLoading(); //显示loading框
+
+		isshow1 = false;
+		isshow2 = false;
+		isshow3 = false;
+		isshow4 = false;
+
+
+		$.ajax({
+			url:'1.php',
+			success:function(){
+				renderBOX1();
+				isshow1 = true;
+				justify();
+			}
+		})
+		
+		$.ajax({
+			url:'2.php',
+			success:function(){
+				renderBOX2();
+				isshow2 = true;
+				justify();
+			}
+		})
+
+		$.ajax({
+			url:'3.php',
+			success:function(){
+				renderBOX3()
+				isshow3 = true;
+				justify();
+			}
+		})
+
+		$.ajax({
+			url:'4.php',
+			success:function(){
+				renderBOX4()
+				isshow4 = true;
+				justify();
+			}
+		})
+
+		justify(){
+			if(isshow1 &isshow2 &isshow3&isshow4){
+				hideloading();// 隐藏对话框
+			}
+		}
+
+	</script>
+</html>

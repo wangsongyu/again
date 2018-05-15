@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+
+	<h2>好友</h2>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+		</ul>
+	
+	<h2>陌生人</h2>
+		<ul>
+			<li>asdfadsf</li>
+			<li>asdfsafd</li>
+			<li>asfdafd</li>
+		</ul>
+	
+	<h2>黑名单</h2>
+		<ul>
+			<li>uuuuuuuuu</li>
+			<li>yyyyyyyy</li>
+			<li>tttttttttt</li>
+		</ul>
+	
+<script type="text/javascript">
+	
+	var h2s = document.querySelectorAll('h2');
+	var uls = document.querySelectorAll('ul');
+
+
+	
+	// for(var i=0; i<h2s.length; i++){
+	// 	onOff(h2s[i],uls[i]);
+	// }
+
+	// function onOff(nowH2,nowUl){
+	// 	var oo = true;
+	// 	nowH2.onclick = function(){
+
+	// 		if(oo){
+	// 			nowUl.style.display = 'none';
+	// 		}else{
+	// 			nowUl.style.display = 'block';
+	// 		}
+	// 		oo = !oo;
+	// 	}
+	// }
+
+	for(var i=0; i<h2s.length;i++){
+		h2s[i].onOff = true;
+		h2s[i].index = i;
+		h2s[i].onclick = function(){
+			if(this.onOff){
+				uls[this.index].style.display = 'none';
+			}else{
+				uls[this.index].style.display = 'block'
+			}
+			this.onOff = !this.onOff;
+		}
+	}
+
+</script>
+</body>
+</html>

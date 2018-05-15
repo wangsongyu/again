@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		var arr = [
+			['a','b','c'],
+			['d','e','f'],
+			['g','h','i']
+		]
+
+		var newArr = [
+			[],
+			[],
+			[]
+		];
+		for(var j=0;j<newArr.length;j++){
+			for(var i=0;i<arr.length;i++){
+				newArr[j].push(arr[i].shift());
+				
+			}
+
+		}
+		
+		console.log(newArr);
+		
+		
+		
+		
+		
+
+	</script>
+
+</body>
+</html>

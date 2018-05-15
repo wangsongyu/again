@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#all{
+			width: 700px;
+			height: 300px;
+			position: relative;
+			margin: 0 auto ;
+		}
+		.div1{
+			width: 200px;
+			height:200px;
+			background: #f00;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.div2{
+			width: 200px;
+			height:200px;
+			background: lawngreen;
+			position: absolute;
+			top: 0;
+			left: 210px;
+
+		}
+		.div3{
+			width: 200px;
+			height:200px;
+			background: #00f;
+			position: absolute;
+			top: 0;
+			left: 420px;
+		}
+	</style>
+</head>
+<body>
+	<div id="all">
+		<div class="div1"></div>
+		<div class="div2"></div>
+		<div class="div3"></div>
+	</div>
+	<button id="btn">.....</button>
+
+	<script type="text/javascript">
+		var all = document.querySelector('#all');
+		var divAll = all.getElementsByTagName('div');
+		
+		var div1 = document.querySelector('.div1');
+		var div2 = document.querySelector('.div2');
+		var div3 = document.querySelector('.div3');
+		var btn = document.querySelector('#btn');
+
+		var arr = ['red','lawngreen','blue']
+		btn.onclick = function(){
+
+			arr.push(arr.shift());
+			
+				for(var i=0;i<divAll.length;i++){
+					divAll[i].style.background = arr[i];
+					
+				}
+
+			}
+
+	</script>
+</body>
+</html>

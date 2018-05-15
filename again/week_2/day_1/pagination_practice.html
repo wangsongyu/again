@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#list{
+			width: 400px;
+			height: 400px;
+		}
+		#list img{
+			width: 400px;
+		}
+		span{
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+		}
+		.active{
+			background: #f00;
+		}
+	</style>
+</head>
+<body>
+
+	<span class="active">1</span>
+	<span>2</span>
+	<span>3</span>
+
+	<div id="list">
+		<img src="img/0.jpg">
+	</div>
+
+<script type="text/javascript">
+	
+	var sBtn = document.querySelectorAll('span');
+	var img = document.querySelector('img');
+
+	for(var i=0; i<sBtn.length; i++){
+
+		sBtn[i].index = i;
+
+		sBtn[i].onmouseover = function(){
+
+			for(var i=0; i<sBtn.length; i++){
+				sBtn[i].className = '';
+			}
+
+			img.src = 'img/'+this.index+'.jpg';
+			this.className = 'active';
+		}
+
+	}
+
+</script>
+</body>
+</html>

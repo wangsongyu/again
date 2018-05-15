@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<button id="btn">点</button>
+	
+	<input type="checkbox" name="">
+	<input type="checkbox" name="">
+	<input type="checkbox" name="">
+	<input type="checkbox" name="">
+	<input type="checkbox" name="">
+
+	<script type="text/javascript">
+
+			
+		var btn = document.getElementById('btn');
+
+		var inputs = document.getElementsByTagName('input');
+
+		btn.onclick = function(){
+			
+			for(var i=0; i<inputs.length; i++){
+				if(inputs[i].checked){
+					inputs[i].checked = false;
+				}
+				else{
+					inputs[i].checked = true;
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			
+		}
+		img{
+			display: block;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<img src="star/1.png">
+	<img src="star/1.png">
+	<img src="star/1.png">
+	<img src="star/1.png">
+	<img src="star/1.png">
+
+<script type="text/javascript">
+	
+	var img = document.querySelectorAll('img');
+
+	for(var i=0; i<img.length;i++){
+		
+		img[i].index = i;
+		
+		img[i].onmouseover = function(){
+			for(var i=0; i<img.length; i++){
+				if(i<=this.index){
+					img[i].src = 'star/2.png';
+				}
+			}
+
+		}
+		img[i].onmouseout = function(){
+			for(var i=0; i<img.length;i++){
+				img[i].src = 'star/1.png'
+			}
+		}
+		
+
+	
+	}
+
+</script>
+</body>
+</html>

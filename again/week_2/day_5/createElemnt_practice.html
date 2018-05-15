@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<div id="div1">
+		<input type="text" name="">
+	</div>
+	<div id="div2">
+		<button>提交</button>
+	</div>
+	<ul id="list">
+		
+	</ul>
+
+	<script type="text/javascript">
+		
+		var text = document.querySelector('#div1 input');
+		var btn = document.querySelector('#div2 button');
+		var list = document.querySelector('#list');
+		var lis = document.getElementsByTagName('li');
+
+
+		btn.onclick = function(){
+
+			var li = document.createElement('li');
+			li.innerHTML = text.value;
+			list.insertBefore(li,lis[0]);
+			if(lis.length>5){
+				list.removeChild(list.lastElementChild);
+			}
+		}
+
+
+	</script>
+
+</body>
+</html>

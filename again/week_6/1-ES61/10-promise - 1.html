@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div id="example"></div>
+		
+	</body>
+	<script>
+
+
+		/*
+		  1.异步流程,
+
+		    （1）回调地狱-嵌套金字塔
+		     (2) 当所有的异步都结束之后，再做处理
+		*/
+
+		 //q.js (promise) => ES6 (promise) 
+
+		/*
+			promise：将异步流程转换同步实现，
+
+		    三种状态，
+		      (1) pending状态
+		      (2) resolve状态
+		      (3) reject 状态
+
+			pending ->reslove 或者 pending->reject 
+		 */
+	
+		function test1(){
+			return new Promise(function(resolve,reject){
+
+				//模拟的请求第一个接口
+				setTimeout(function(){
+					console.log("test1 执行完");
+
+					resolve("tes1的结果");
+					// reject("test1 失败了");
+				},1000);
+
+				// $.ajax({
+				// 	url:"1.php",
+				// 	success:function(result){
+				// 		resolve(result)
+				// 	},
+				// 	fali:function(error){
+				// 		reject(error)
+				// 	}
+				// })
+
+			})
+		}
+
+		function test2(){
+			return new Promise(function(resolve,reject){
+				// 模拟请求第二个接口
+				setTimeout(function(){
+					console.log("test2 执行完");
+					resolve("test2结果")
+					// reject("test2 失败了");
+
+				},1200);
+
+			})
+		}
+
+
+		function test3(){
+			return new Promise(function(resolve,reject){
+				// 模拟请求第二个接口
+				setTimeout(function(){
+					console.log("test3 执行完");
+					resolve("test3结果")
+					// reject("test2 失败了");
+
+				},1500);
+
+			})
+		}
+
+		// test1().then(function(result1){
+		// 	console.log(result1);
+		// 	return test2(result1);
+		// }).then(function(result2){
+		// 	console.log(result2);
+
+		// 	return test3(result2);
+		// }).then(function(result3){
+
+		// 	console.log(result3);
+		// }).catch(function(error){
+		// 	console.log("catch方法中打印",error);
+
+		// 	//根据 不同的错误信息 进行显示
+		// })
+
+
+		// axios.get("1.php").then(function(){
+
+		// 	return axios.get('2.php')
+		// }).then(function(result){
+		// 	console.log(result);
+		// })
+
+
+		//showloading //显示loading框
+		Promise.all([test1(),test2(),test3()]).then(function(result){
+			//hideloading
+			console.log(result);
+		}).catch(function(){
+			//hideloading
+			console.log("error")
+		})
+	</script>
+</html>

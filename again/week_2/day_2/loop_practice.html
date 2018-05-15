@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<input type="text" name="" id="text">
+	<input type="button" name="" value="start" id="btn">
+
+
+	<script type="text/javascript">
+		
+		var text = document.querySelector('#text');
+		var btn = document.querySelector('#btn');
+		var num=0;
+		var dir = 1;
+
+		btn.onclick = function(){
+
+			setInterval(function(){
+				text.value = num;
+				if(num == 3){
+					dir = -1;
+				}else if(num == 0){
+					dir = 1;
+				}
+
+				num +=dir;
+
+			},1000)
+
+		}
+
+	</script>
+</body>
+</html>

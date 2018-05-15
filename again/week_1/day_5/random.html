@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#all{
+			margin: 200px auto;
+			width: 500px;
+			height: 500px;
+		}
+		#text{
+			height: 100px;
+			width: 200px;
+			border: 3px solid #990088;
+			font-size:30px;
+		}
+
+		#box{
+			font-size: 30px;
+			color: red;
+		}
+		#start{
+			width: 100px;
+			height: 50px;
+			background: #9cfb9d;
+		}
+		#guess{
+			width: 100px;
+			height: 50px;
+			background:lightskyblue;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="all">
+		<input id="text" type="text" name="">
+		<button id="start">start</button>
+		<button id="guess">guess</button>
+		<div id="box">你还有10次机会</div>
+	</div>
+
+
+<script type="text/javascript">
+	
+	var start = document.getElementById('start');
+	var guess = document.getElementById('guess');
+	var text = document.getElementById('text');
+	var box =document.getElementById('box');
+	var count = 10;
+	var num;
+
+	start.onclick = function(){
+		num = Math.floor(Math.random()*100);
+		console.log(num);
+	}
+
+	guess.onclick = function(){
+		if(text.value<num){
+			alert('小了小了');
+			// box.innerHTML += 'X ';
+		}else if(text.value>num){
+			alert('大了大了');
+			// box.innerHTML += 'X ';
+		}else if(text.value ==0){
+			alert('请点击start开始游戏');
+			return;
+		}
+		else{
+			alert('恭喜你答对了！！');
+			return;
+		}
+		count--;
+		if(count>0){
+			// alert('笨蛋淘汰！！~');
+			box.innerHTML = '你还有'+count+'次机会！'
+		}else if(count<=0){
+			box.innerHTML = 'GAME OVER!';
+			
+		}
+	}
+
+
+
+</script>
+</body>
+</html>

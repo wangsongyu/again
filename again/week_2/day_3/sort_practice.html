@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<button id="btn">..</button>
+
+	<ul>
+		<li>11</li>
+		<li>2</li>
+		<li>22</li>
+		<li>4</li>
+		<li>55</li>
+	</ul>
+
+	<script type="text/javascript">
+		
+
+		// var arr = [1,22,44,11,2,6];
+		// arr.sort(function(n1,n2){
+		// 	return n2-n1;
+		// })
+		// console.log(arr)
+
+
+		var btn = document.querySelector('#btn');
+		var lis = document.querySelectorAll('li');
+		var arr = [];
+		var onOff = true;
+		for(var i=0;i<lis.length;i++){
+			arr.push(lis[i].innerHTML);
+		}
+		btn.onclick = function(){
+
+			if(onOff){
+				arr.sort(function(a,b){
+					return a-b;
+				})
+				for(var i=0;i<arr.length;i++){
+					lis[i].innerHTML = arr[i]
+				}
+			}else{
+				arr.sort(function(a,b){
+					return b-a;
+				})
+				for(var i=0;i<arr.length;i++){
+					lis[i].innerHTML = arr[i]
+				}
+			}
+
+			onOff = !onOff;
+
+		}
+
+
+
+	</script>
+</body>
+</html>

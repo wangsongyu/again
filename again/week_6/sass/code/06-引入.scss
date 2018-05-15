@@ -1,0 +1,18 @@
+// @import "05-extend.scss"; 
+
+
+@import "07-px2rem.scss";
+
+// this is single
+
+/*
+	mulite - line
+ */
+#box1{
+	width:px2rem(70);
+	height:px2rem(100);
+}
+
+#box2{
+	width:px2rem(400);
+}

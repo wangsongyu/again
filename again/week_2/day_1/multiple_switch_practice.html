@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#one{
+			margin-bottom: 50px;
+		}
+		span{
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+
+		}
+		.active{
+			background: red;
+		}
+		.container div{
+			display: none;
+		}
+		div.show{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="one">
+		<span class="active">1</span>
+		<span>2</span>
+		<span>3</span>
+		<div class="container">
+			<div class="show">1111111111111</div>
+			<div>222222222222</div>
+			<div>33333333333333</div>
+		</div>
+	</div>
+	<div id="two">
+		<span class="active">1</span>
+		<span>2</span>
+		<span>3</span>
+		<div class="container">
+			<div class="show">1111111111111</div>
+			<div>222222222222</div>
+			<div>33333333333333</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	
+	// var btnOne = document.querySelectorAll('#one span');
+	// var conOne = document.querySelectorAll('#one .container');
+	// var btnTwo = document.querySelectorAll('#two span');
+	// var conTwo = document.querySelectorAll('#two .container');
+	// var btnThr = document.querySelectorAll('#three span');
+	// var conThr = document.querySelectorAll('#three .container');
+
+	// // for(var i=0; i<btnOne.length;i++){
+	// // 	tabSwitch(btnOne[i],conOne[i]);
+	// // }
+	// tabSwitch(btnOne,conOne);
+	// tabSwitch(btnTwo,conTwo);
+	// tabSwitch(btnThr,conThr);
+
+	// function tabSwitch(btn,con){
+	// 	for(var i=0; i<btn.length;i++){
+	// 		btn[i].index = i;
+	// 		btn[i].onclick = function(){	
+	// 			for(var i=0;i<btn.length;i++){
+	// 				btn[i].className = '';
+	// 				con[i].className = 'container';
+	// 			}
+	// 			this.className = 'active';
+	// 			con[this.index].className = 'container show';
+	// 		}
+	// 	}
+
+	// }
+
+
+
+	var one = document.querySelector('#one');
+	var two = document.querySelector('#two');
+	tabSwitch(one);
+	tabSwitch(two);
+
+	function tabSwitch(parent){
+		var btns = parent.querySelectorAll('span');
+		var con = parent.querySelector('.container');
+		var divs = con.querySelectorAll('div');
+
+		for(var i=0; i<btns.length;i++){
+			btns[i].index = i;
+			btns[i].onmouseover = function(){
+				for(var i=0;i<btns.length;i++){
+					btns[i].className = '';
+					divs[i].className = '';
+				}
+				this.className = 'active';
+				divs[this.index].className = 'show';
+			}
+		}
+	}
+</script>
+</body>
+</html>
